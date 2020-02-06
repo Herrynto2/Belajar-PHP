@@ -1,0 +1,251 @@
+#PHP Data Type
+    "Is kinds of data that can be saved into variable (var)."
+    1. Integer (Number) 
+    2. String (Text)
+    3. Float (Decimal)
+    4. Boolean (True False)
+    5. Object
+    6. Function
+    7. Undefined
+    8. Array
+
+#Jenis Displays  
+    <?php
+        echo "HERI HERYANTO";           Display nilai
+        print "HERI HERYANTO";          Display nilai
+        var_dump("HERI HERYANTO");      Display True or False
+    ?>
+
+#Penggabungan string
+    "menggunakan tanda titik"
+    $a = "AXEL";
+    $b = "Official";
+    echo $a . " " . $b;
+    
+#operator aritmatika
+    +, -, *, /, %(modulus/sisa pembagian)
+    <?php
+        $x = 10;
+        $y = 100;
+        echo $x * $y; 
+    ?>
+
+#Operator Assignment (Penugasan)
+    =, +=(menjumlahkan), -=, *=, /=, %=, .=(menggabugkan string)
+    <?php
+        $hasil = 2;
+        $hasil -= 5;
+        echo $hasil;
+        $nama = "<b>Heri</b>";
+        $nama .=" ";
+        $nama .="Yanto";
+        echo $nama;
+    ?>
+
+#Operator Comparison (Perbandingan)
+    == (membandingkan nilai), != (tidak sama dengan), === (membandingkan nilai dan tipe data), !==
+    > (lebih besar), < (kurang), <=, >=
+    exp:
+    <?php
+        $nilai = 2;
+        var_dump($nilai > 4 && $nilai == 2);
+    ?>
+
+#Pengkondisian (If Else)
+    if ($x == y) {
+    }
+    else if ($x == z){
+    }
+    else {
+    }
+    Note :
+      == (Membandingkan nilai) / === (Membandingkan nilai dan type data)
+      parseInt(prompt("String")); (change string to integer)
+
+#Pengkondisian (Switch Case)
+    switch(ekspresi) {
+       case "1":
+       aksi 1
+       {break;}
+       case "2":
+       aksi 2
+       {break;}
+       case "n":
+       aksi n
+       {break;}
+       default:
+       aksi default
+       {break;}
+    }
+
+#Pengulangan (For)
+    for ($i=0; $i<5 ; $i++) {
+    echo "Hello World <br>";
+    }
+
+#Pengulangan (While)
+    $a=0;
+    while ( $a < 10) {
+    echo "Hello Earth <br>";
+    $a++;
+    }
+
+#Pengulangan (do while)
+    "Dijalankan dulu sekali baru dicek"
+    $x=10;
+    do {
+    echo "Hello Guys";
+    } while ($x < 9);
+
+#Function
+    - date("l, D M Y")
+        ex :
+        echo date("l, d m y")
+    - move_uploaded_file(tempat awal, tujuan)
+        "untuk memindahkan file dari penyimpanan sementara ke direktory"
+    - die;
+        "untuk mematikan script dibawahnya"
+    - Explode
+        "Untuk memecah string menjadi array"
+    - End
+        "Untuk mengambil array yang terakhir
+    - strtolower
+        "untuk memaksa string dalam array menjadi hurufnya menjadi kecil semua"
+    - in_array(nedle, haystack) /(Jarum, Jerammi)
+        "untuk mengecek adakah string dalam array"
+    - uniqid()
+        "untuk membuat random string contoh pada pada upload gambar"
+    - password_hash($var, PASSWORD_DEFAULT)
+        "untuk membuat random/acak password"
+    - md5($var)
+        "untuk membuat random/acak password tapi mudah dihack"
+    - mysqli_affcted_rows($conn)
+        "untuk meghasilkan nilai 1 jika berhasil dan -1 jika gagal
+
+    http://php.net/manual/en/funcref.php (Link untuk mencari function)
+
+#Array
+    "Untuk menyimpan banyak nilai dalam suatu variabel"
+    "Element di dalamnya boleh berbeda variabel"
+    "Keynya dimulai dari 0"
+        $Parent = [key];
+        $var = array("Senin", "Selasa", "Rabu");        -> Cara Lama
+        $var = ["Senin", 123, False];                   -> Cara Baru
+        $var = [0, 1, 2, 3 ..];
+    "Untuk menampilin semua nilai array for developer"
+        var_dump ($var); atau
+        print_r ($var);
+    "Untuk menampilin satu nilai array for user"
+        echo $var[0];
+    "Gunakan For dan foreach untuk implementasinya"
+        foreach ($parent as $key) {
+        }
+    "Array di dalam Array"
+        $Parent : [key[childkey],key[childkey], ...]
+        $var : [[0,1,2,3],[0,1,2,3], ...];
+        foreach ($key as $childkey)
+        echo &parent[key][childkey]
+
+#Asosiatif array
+    "Menentukan key-nya sendiri dengan string"
+    $parent = ["String1" => "child1",
+               "String2" => "child2",
+               "String3" => "child3",
+                ]
+    echo $child1["key"];
+
+#Global
+    "Untuk menglobalkan variable lokal"
+    "function tidak bisa menampilkan variabel di luarnya jadi harus ditambah global $();
+    $x = "String"               
+    function tampil() {
+        global $x;
+        echo $x;
+    }
+    tampil();
+
+#Request Mehod
+    $_GET
+        "Untuk menangkap data yang diinput dari file php atau web browser"
+        "Data Tampil di URL"
+            Cara 1 : $_GET = [1, "Heri", "Axel"];
+            Cara 2 : $_GET = ["ID" => 1, 
+                             "Nama" => "Heri", 
+                             "Brand" => "Axel"];
+            Cara 3 : $_GET["ID"] = 1;
+                     $_GET["Nama"] = "Heri";
+                     $_GET["Brand"] = "Axel";
+            Cara 4 : Ketikkan ?nama=Heri Heryanto&Brand=Axel Untuk menampilkan ke _GET
+            Tampil : var_dump($_GET);
+
+    $_POST
+        "Untuk memanggil data yang diinput dari file php atau web browser"
+        "Data tidak tampil di URL"
+            $_POST
+
+    $_FILES
+        "Untuk menangani file"
+
+    $_REQUEST
+    $_SESSION
+    $_COOKIE
+    $_SERVER
+    $_ENV
+
+#Database
+    DBMS (Database management System) adalah software untuk mengelola Database
+        - Oracle
+        - Mysql
+        - SQLServer
+        - PostgreSQL
+        - MongoDB
+        Primary Key (Kode unik yang tidak sama dengan kode lainnya contoh No.Induk dan Id)
+        Auto Increment
+
+    Database via CMD
+        - cd to xampp/mysql/bin/ -> /mysql -u root -p                   (login as admin)
+        - Show databases;                                               (menampilkan database)
+        - create database namadc;                                       (membuat database)
+        - use namadb;                                                   (menggunakan database)
+        - create table namatable (                                      (membuat isi table)
+            ID int primary key auto_increnent,
+            Nama varchar(30),
+            Gambar varchar(30)
+            );
+        - show tables;                                                  (melihat table)
+        - describe namatable;                                           (melihat isi table)
+        - insert into namatable value ('','Heri','heri.jpg');           (input data)
+        - select * from namatable;/select ID,nama from namatable;       (Pilih/ cari data)
+        - select * from namatable where ID='23';                        (Pilih/ cari data spesifik)
+        - select * from namatable Order by ID ASC                       (Tampil dari idnya kecil ke besar)
+        - select * from namatable Order by ID DESC                      (Tampil dari idnya besar ke kecil)
+        - update namatable set Gambar='heryzen.jpg';                    (ubah semua data)
+        - update namatable set Gambar='heryzen.jpg' where id='1';       (Ubah data spesifik)
+        - delete from namatable;                                        (delete semua data)
+        - delete from namatable where ID='1';                           (delete data spesifik)
+        - drop table namatable;                                         (delete table)
+
+#Koneksi PHP ke Database
+        - Koneksi database 
+          $conn = mysqli_connect("localhost","username","password","namadatabase");
+        - Ambil/Query data table
+          $result = mysqli-query($conn, "select * from namatable");
+        - Cek Koneksi
+          if (!$result) {
+          mysqli_error($conn); }
+        - Cek isi data table
+          mysqli_fetch_row(); //mengembalikan array numerik
+          mysqli_fetch_assoc(); //mengembalikan array assosiatif
+          mysqli_fetch_array(); //mengembalikan keduanya
+        - Cek semua isi data table
+          while ($data = mysqli_fetch_assoc($result)) {
+              var_dump($data["Namma"]);
+          }
+          
+#Login-System  
+        - Sign up
+        - Enkripsi Password
+        - Login
+        - _SESSION
+        - _COOKIE
+          
